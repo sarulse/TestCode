@@ -1,19 +1,14 @@
 "use strict";   
-Object.defineProperty(Array.prototype, "pushIfDoesntExist", {
-            enumerable: false,  
-            value: function(item) {
-               //code to check if item exists in the clicked list array
-                if(this.indexOf(item) === -1) {
-                    this.push(item);
-                    return true;
-                }
-                return false;
-               
+
+var Testing = {        
+        clickedList : [],
+        pushIfDoesntExist : function (arr, item){    
+            if(arr.indexOf(item) === -1) {
+                arr.push(item);
+                return true;
             }
-});
-var Testing = {
-        
-        clickedList : [],        
+            return false;
+        },
         applyListeners: function() {
             //converting HTML collection into an Array
             var nodes = Array.from(document.getElementsByTagName("li"));                    
@@ -28,12 +23,12 @@ var Testing = {
         },
         //checks if Item exists in the array and display data
         checkItemExists: function(testObj, arrElem){                                   
-            testObj.clickedList.pushIfDoesntExist(arrElem);
+            testObj.pushIfDoesntExist(this.clickedList, arrElem);
             testObj.displayData();                    
         },
         displayData: function() {
             var textBox = document.getElementById("clickedElements");
-            textBox.textContent = this.clickedList.join(", ");
+            textBox.textContent = this.clickedList.join(', ');
         }
 };
 Testing.applyListeners();
