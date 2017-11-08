@@ -1,5 +1,5 @@
 "use strict";   
-Object.defineProperty(Array.prototype, 'pushIfDoesntExist', {
+Object.defineProperty(Array.prototype, "pushIfDoesntExist", {
             enumerable: false,  
             value: function(item) {
                //code to check if item exists in the clicked list array
@@ -12,7 +12,6 @@ Object.defineProperty(Array.prototype, 'pushIfDoesntExist', {
             }
 });
 var Testing = {
-
         
         clickedList : [],        
         applyListeners: function() {
@@ -34,7 +33,7 @@ var Testing = {
         },
         displayData: function() {
             var textBox = document.getElementById("clickedElements");
-            textBox.textContent = this.clickedList.join(', ');
+            textBox.textContent = this.clickedList.join(", ");
         }
 };
 Testing.applyListeners();
