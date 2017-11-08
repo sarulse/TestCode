@@ -14,7 +14,7 @@ var Testing = {
         //converting HTML collection into an Array
         var nodes = Array.from(document.getElementsByTagName("li"));
         var self = this;
-        //used forEach to replace "for" for readability and performance               
+        //Updated the following block of code for readability and performance               
         nodes.forEach(function (node) {
             node.addEventListener("click", function () {
                 self.checkItemExists(self, this.textContent);
@@ -22,7 +22,7 @@ var Testing = {
         });
 
     },
-    //checks if Item exists in the array and display data
+    //checks if an element exists in the array and display data
     checkItemExists: function (testObj, arrElem) {
         testObj.pushIfDoesntExist(this.clickedList, arrElem);
         testObj.displayData();
